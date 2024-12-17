@@ -1,0 +1,11 @@
+<div class="results">
+  <div class="results__hires">
+    <p>Назначения:</p>
+    <p class="results__hires__hire" *ngFor="let hire of hires">
+      Человек {{hire[0]}} назначен на работу {{hire[1]}}
+    </p>
+  </div>
+  <div class="results__resources">
+    <p>Затраты: {{resources}}</p>
+  </div>
+</div>

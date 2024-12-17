@@ -1,0 +1,120 @@
+.dimensions {
+  padding-bottom: 2em;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.dimensions__tile {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.dimensions__tile > input {
+  font-family: inherit;
+  width: 100px;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.dimensions__tile > input::placeholder {
+  color: transparent;
+}
+
+.dimensions__tile > input:placeholder-shown ~ .dimensions__tile__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.dimensions__tile__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.dimensions__tile > input:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.dimensions__tile > input:focus ~ .dimensions__tile__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+/* reset input */
+.dimensions__tile > input:required, .dimensions__tile > input:invalid {
+  box-shadow: none;
+}
+
+
+.matrix {
+  display: grid;
+  position: relative;
+}
+
+.matrix__row__cell {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  font-size: 1.4rem;
+  border: 1px solid #9b9b9b;
+  color: white;
+  text-align: center;
+}
+
+.matrix__row__cell__i {
+  position: relative;
+  top: 20px;
+  left: -10px;
+}
+
+.matrix__row__cell__j {
+  position: relative;
+  top: 0px;
+  left: 10px;
+}
+
+.matrix__row__cell__input {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  padding-block: 0;
+  padding-inline: 0;
+  border: none;
+  text-align: center;
+  font-size: 1.2rem;
+  background: transparent;
+  color: white;
+}
+
+.calculate-button {
+  color: white;
+  background-color: transparent;
+  border: 2px solid #9b9b9b;
+  border-radius: 2em;
+  font-size: 1.3rem;
+  padding: 1em;
+  width: 100%;
+  margin: 1em 0 1em 0;
+}

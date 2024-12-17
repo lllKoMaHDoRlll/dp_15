@@ -1,0 +1,23 @@
+<div class="dimensions">
+  <div class="dimensions__tile">
+    <input type="text" [value]="n" (change)="updateN($event)" name="n_value" placeholder="Число n">
+    <label for="n_value" class="dimensions__tile__label">Введите n</label>
+  </div>
+</div>
+<div class="matrix" [style]="'grid-template-columns: repeat(' + (n*1 + 1) + ', 50px); grid-template-rows: repeat(' + (n*1 + 1) + ', 50px);'">
+  <span class="matrix__row__cell"> <span class="matrix__row__cell__i">i</span> <span class="matrix__row__cell__j">j</span></span>
+  <ng-content class="matrix__row" *ngFor="let i of range(n)">
+    <span class="matrix__row__cell">{{i + 1}}</span>
+  </ng-content>
+  <ng-content class="matrix__row" *ngFor="let i of range(n)">
+    <span class="matrix__row__cell">{{i + 1}}</span>
+    <span class="matrix__row__cell" *ngFor="let j of range(n)">
+      <input type="text" class="matrix__row__cell__input" [name]="'item' + i + ';' + j">
+    </span>
+  </ng-content>
+</div>
+<button (click)="calculate()" class="calculate-button">Рассчитать назначения</button>
+
+<ng-content #results *ngIf="resources !== null">
+  <app-results [hires]="hires" [resources]="resources"/>
+</ng-content>
